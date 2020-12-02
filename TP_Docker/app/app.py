@@ -1,4 +1,5 @@
 from flask import Flask, render_template, url_for, request
+import os
 
 app = Flask(__name__)
 
@@ -34,4 +35,4 @@ def get_book_by_title():
     pass
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=os.getenv("PORT", 5000), debug=True)
